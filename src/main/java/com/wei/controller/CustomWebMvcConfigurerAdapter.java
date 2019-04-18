@@ -1,16 +1,4 @@
-/*
- * Copyright (C) 2011-2018 ShenZhen iBOXPAY Information Technology Co.,Ltd.
- *
- * All right reserved.
- *
- * This software is the confidential and proprietary
- * information of iBoxPay Company of China.
- * ("Confidential Information"). You shall not disclose
- * such Confidential Information and shall use it only
- * in accordance with the terms of the contract agreement
- * you entered into with iBoxpay inc.
- *
- */
+
 
 package com.wei.controller;
 
@@ -32,8 +20,6 @@ import java.util.Map;
  *
  * Description: 自定义MVC配置
  *
- * @author: nieminjie
- * @since: 2017年5月5日
  *
  */
 @Configuration
