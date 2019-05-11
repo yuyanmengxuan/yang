@@ -1,12 +1,18 @@
 package com.wei.pojo;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.Objects;
 
 public class Trade {
     private Integer id;
+    @NotEmpty(message = "订单不能为空")
     private String order;
+    @NotNull(message = "编号不能为空")
     private Integer no;
+    @Future(message = "时间不符合规范")
     private Date createTime;
 
     public Date getCreateTime() {

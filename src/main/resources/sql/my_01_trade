@@ -1,0 +1,7 @@
+CREATE TABLE `trade` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `order` varchar(255) DEFAULT NULL,
+  `no` bigint(10) DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;

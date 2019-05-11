@@ -1,9 +1,13 @@
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix:
   aop:
     auto: true
     proxy-target-class: true
   datasource:
-    url: jdbc:mysql://localhost:3306/mysql?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://119.23.209.49:3306/weijie?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=utf8&useSSL=false
     username: root
     password: 123456
     druid:
@@ -24,7 +28,7 @@ spring:
       filters: stat,wall
       web-stat-filter:
         enabled: true
-        # url-pattern:
+        # url-p attern:
         # exclusions:
         # session-stat-enable: true
         # session-stat-max-count:
@@ -54,18 +58,18 @@ mybatis-plus:
     cache-enabled: false
     jdbc-type-for-null: 'null'
     log-prefix: 'dao.'
-log4j:
-  rootLogger: DEBUG, stdout
+#log4j:
+#  rootLogger: DEBUG, stdout
 logging:
   level:
-    ROOT: debug
+#    ROOT: debug
     org.springframework.web: DEBUG
     com:
       com:
         wei:
           mapper: debug
-          service: debug
-          controller: debug
+ #         service: debug
+ #         controller: debug
 callback:
   system:
     url: http:localhost

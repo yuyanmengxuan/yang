@@ -9,7 +9,10 @@ import com.wei.service.TradeService;
 import com.wei.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -63,18 +66,28 @@ public class TradeController {
     }
 
     @PostMapping("/select")
-    public String selete(){
+    public String selete(@RequestBody Trade req, Errors errors){
+    if(errors.hasErrors()){
+    List<FieldError> fieldErrors = errors.getFieldErrors();
+    for (FieldError err:fieldErrors) {
+        System.out.println(err.getField()+err.getDefaultMessage());
+    }
+}
 
+      Map<String,String> map=new HashMap<>();
+      map.put("id1","");
+      //Integer id=Integer.valueOf(map.get("id") );
         Wrapper<Trade> wr=new EntityWrapper<>();
-        wr.gt("id",5);
-
-
-      wr.gt("create_time", ""+DateUtil.getDate(-40));
-     wr.lt("create_time",""+DateUtil.getDate(40));
-         List<Trade> trades = tradeService.selectList(wr);
-        for (int i = 0; i <trades.size() ; i++) {
+        //wr.gt("id",5);
+       // wr.eq("id",id);
+        Trade trade = tradeService.selectOne(wr);
+        System.out.println( trade.toString()+"\r\n");
+        //wr.gt("create_time", ""+DateUtil.getDate(-40));
+     //wr.lt("create_time",""+DateUtil.getDate(40));
+         //List<Trade> trades = tradeService.selectList(wr);
+        /*for (int i = 0; i <trades.size() ; i++) {
             System.out.println( trades.get(i).toString()+"\r\n");
-        }
+        }*/
 
         return "200";
     }
