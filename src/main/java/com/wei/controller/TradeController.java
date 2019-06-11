@@ -3,6 +3,7 @@ package com.wei.controller;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.wei.config.ConfigURL;
+import com.wei.config.WebLog;
 import com.wei.mapper.TradeMapper;
 import com.wei.pojo.Trade;
 import com.wei.service.TradeService;
@@ -63,6 +64,7 @@ public class TradeController {
     }
 
     @PostMapping("/select")
+    @WebLog(description = "请求了用户登录接口")
     public String selete(){
 
         Wrapper<Trade> wr=new EntityWrapper<>();
